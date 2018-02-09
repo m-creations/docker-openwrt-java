@@ -58,4 +58,4 @@ RUN opkg update && opkg install curl unzip &&\
 ADD scripts/import-certs.sh /
 RUN chmod u+x /import-certs.sh
 
-CMD [ "java", "-version" ]
+ENTRYPOINT ["/import-certs.sh"]
