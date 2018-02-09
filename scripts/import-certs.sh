@@ -12,7 +12,6 @@ then
     done
     keytool -list -keystore $JAVA_HOME/lib/security/cacerts \
             -storepass changeit
-    #mvn clean install -Djavax.net.ssl.trustStore=$JAVA_HOME/jre/lib/security/cacerts
 fi
 
 java -version
