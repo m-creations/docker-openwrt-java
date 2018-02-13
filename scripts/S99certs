@@ -1,0 +1,7 @@
+#!/bin/sh /etc/rc.common
+START=99
+
+start() {
+	touch /just_testing
+	/usr/local/bin/import-certs.sh
+}

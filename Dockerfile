@@ -62,4 +62,7 @@ RUN chmod u+x /usr/local/bin/import-certs.sh
 ADD scripts/rc.local /etc/rc.local
 RUN chmod 775 /etc/rc.local
 
+ADD scripts/S99certs /etc/rc.d/S99certs
+RUN chmod 777 /etc/rc.d/S99certs
+
 CMD [ "java", "-version" ]
