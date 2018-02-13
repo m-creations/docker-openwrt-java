@@ -55,7 +55,8 @@ RUN opkg update && opkg install curl unzip &&\
            /opt/jre/lib/amd64/libjavafx*.so \
            /opt/jre/lib/amd64/libjfx*.so
 
-ADD scripts/import-certs.sh /
-RUN chmod u+x /import-certs.sh
+RUN mkdir -p /usr/local/bin
+ADD scripts/import-certs.sh /usr/local/bin
+RUN chmod u+x /usr/local/bin/import-certs.sh
 
-ENTRYPOINT ["/import-certs.sh"]
+CMD [ "java", "-version" ]
