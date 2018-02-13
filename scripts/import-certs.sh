@@ -14,6 +14,3 @@ then
             -storepass changeit
 fi
 
-java -version
-
-exec "$@"
