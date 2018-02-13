@@ -10,7 +10,6 @@ then
                 -noprompt \
                 -alias $(basename $i .crt) # we need a unique alias
     done
-    keytool -list -keystore $JAVA_HOME/lib/security/cacerts \
-            -storepass changeit
+#    keytool -list -keystore $JAVA_HOME/lib/security/cacerts -storepass changeit
 fi
 

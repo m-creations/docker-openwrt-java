@@ -59,4 +59,7 @@ RUN mkdir -p /usr/local/bin
 ADD scripts/import-certs.sh /usr/local/bin
 RUN chmod u+x /usr/local/bin/import-certs.sh
 
+ADD scripts/rc.local /etc/rc.local
+RUN chmod 775 /etc/rc.local
+
 CMD [ "java", "-version" ]
