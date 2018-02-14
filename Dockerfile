@@ -55,4 +55,12 @@ RUN opkg update && opkg install curl unzip &&\
            /opt/jre/lib/amd64/libjavafx*.so \
            /opt/jre/lib/amd64/libjfx*.so
 
+RUN mkdir -p /usr/local/bin
+ADD scripts/import-certs.sh /usr/local/bin/
+RUN chmod u+x /usr/local/bin/import-certs.sh
+
+ADD scripts/start-java.sh /
+RUN chmod u+x /start-java.sh
+
+ENTRYPOINT ["/start-java.sh"]
 CMD [ "java", "-version" ]
